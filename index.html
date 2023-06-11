@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trying the gallery and slider settings</title>
+    <link rel="stylesheet" href="./src/css/main.css" media="screen">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <script defer src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <script defer src="./src/script.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+      <header id="header">
+        <nav class="nav">
+          <img src="images/logo.svg" alt="logo icon" class="logo">
+          <img src="images/icon-menu.svg" alt="menu icon" class="menu-icon">
+          <ul class="navbar" data-visible = "false">
+            <img src="images/icon-close.svg" alt="close icon" class="close-nav-icon">
+            <li class="navbar-list">
+              <a href="#" class="navbar-list-link text-capitalize">
+                collections
+              </a>
+            </li>
+            <li class="navbar-list">
+              <a href="#" class="navbar-list-link text-capitalize">
+                men
+              </a>
+            </li>
+            <li class="navbar-list">
+              <a href="#" class="navbar-list-link text-capitalize">
+                women
+              </a>
+            </li>
+            <li class="navbar-list">
+              <a href="#" class="navbar-list-link text-capitalize">
+                about
+              </a>
+            </li>
+            <li class="navbar-list">
+              <a href="#" class="navbar-list-link text-capitalize">
+                contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="shopping">
+          <div class="cart-icon-div">
+            <img src="images/icon-cart.svg" alt="cart icon" class="cart-icon">
+            <span class="item-num" data-visible="false"></span>
+          </div>
+          <img src="images/image-avatar.png" alt="profile image" class="profile-img">
+        </div>
+      </header>
+      <main id="main">
+        <section class="product-picture">
+          <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">
+                  <img src="images/image-product-1.jpg" alt="product image" class="screen-img">
+                </li>
+                <li class="glide__slide">
+                  <img src="images/image-product-2.jpg" alt="product image" class="screen-img">
+                </li>
+                <li class="glide__slide">
+                  <img src="images/image-product-3.jpg" alt="product image" class="screen-img">
+                </li>
+                <li class="glide__slide">
+                  <img src="images/image-product-4.jpg" alt="product image" class="screen-img">
+                </li>
+              </ul>
+            </div>
+            <div class="glide__arrows slide-arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left slider-arrow" data-glide-dir="<">
+                  <img src="images/icon-previous.svg" alt="arrow icon" class="arrow-img">
+                </button>
+                <button class="glide__arrow glide__arrow--right slider-arrow" data-glide-dir=">">
+                  <img src="images/icon-next.svg" alt="arrow icon" class="arrow-img">
+                </button>
+              </div>
+              <div class="glide__bullets" data-glide-el="controls[nav]">
+                <span class="glide__bullet thumbnail-span" data-glide-dir="=0">
+                  <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail picture" class="thumbnail">
+                </span>
+                <span class="glide__bullet thumbnail-span" data-glide-dir="=1">
+                  <img src="images/image-product-2-thumbnail.jpg" alt="thumbnail picture" class="thumbnail">
+                </span>
+                <span class="glide__bullet thumbnail-span" data-glide-dir="=2">
+                  <img src="images/image-product-3-thumbnail.jpg" alt="thumbnail picture" class="thumbnail">
+                </span>
+                <span class="glide__bullet thumbnail-span" data-glide-dir="=3">
+                  <img src="images/image-product-4-thumbnail.jpg" alt="thumbnail picture" class="thumbnail">
+                </span>
+              </div>
+          </div>
+        </section>
+        <section class="product-details">
+          <div class="product-details-div">
+            <p class="company-name paragraph">Sneaker Company</p>
+            <h2 class="product-name">Fall Limited Edition Sneakers</h2>
+            <p class="product-descr paragraph">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+            <div class="product-price">
+              <p class="discount-price">$125.00</p>
+              <span class="discount">50%</span>
+              <p class="original-price">$250.00</p>
+            </div>
+          </div>
+          <div class="product-cta">
+            <div class="product-count">
+              <img src="images/icon-minus.svg" alt="minus icon" class="minus-icon">
+              <p class="count">0</p>
+              <img src="images/icon-plus.svg" alt="plus icon" class="plus-icon">
+            </div>
+            <button class="cta-btn add-cart-btn">
+              <img src="images/icon-cart-2.svg" alt="cart icon" class="cart-icon">
+              Add to cart
+            </button>
+          </div>
+        </section>
+      </main>
+      <!-- cart div -->
+      <div class="cart" data-visible="false">
+        <div class="cart-header">
+          <p class="cart-title">Cart</p>
+        </div>
+        <div class="cart-body"><p class="paragraph empty">Your cart is empty</p></div>
+      </div>
+
+      <!-- lightbox div -->
+      <dialog id="dialog" class = "gallery-modal">
+        <div class="modal-container">
+          <!-- <img src="images/icon-close-2.svg" alt="close gallery modal" class="close-modal" onclick="closeModal()"> -->
+          <div class="close-modal" onclick="closeModal()"></div>
+          <div class="slider-container">
+            <div class="slider">
+              <div class="slider-div">
+                 <img src="./images/image-product-1.jpg" alt="gallery image one" class="slide-img">
+              </div>
+              <div class="slider-div">
+                 <img src="./images/image-product-2.jpg" alt="gallery image one" class="slide-img">
+              </div>
+              <div class="slider-div">
+                 <img src="./images/image-product-3.jpg" alt="gallery image one" class="slide-img">
+              </div>
+              <div class="slider-div">
+                 <img src="./images/image-product-4.jpg" alt="gallery image one" class="slide-img">
+              </div> 
+              <div class="slide-arrows">
+                <button class="slider-arrow--left slider-arrow" data-glide-dir="<">
+                  <img src="images/icon-previous.svg" alt="arrow icon" class="arrow-img">
+                </button>
+                <button class="slider-arrow--right slider-arrow" data-glide-dir=">">
+                  <img src="images/icon-next.svg" alt="arrow icon" class="arrow-img">
+                </button>
+              </div>
+            </div>
+            <div class="slide-bullets">
+              <span class="thumbnail-span">
+                <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail picture" class="thumbnail">
+              </span>
+              <span class="thumbnail-span">
+                <img src="images/image-product-2-thumbnail.jpg" alt="thumbnail picture" class="thumbnail">
+              </span>
+              <span class="thumbnail-span">
+                <img src="images/image-product-3-thumbnail.jpg" alt="thumbnail picture" class="thumbnail">
+              </span>
+              <span class="thumbnail-span">
+                <img src="images/image-product-4-thumbnail.jpg" alt="thumbnail picture" class="thumbnail">
+              </span>
+            </div>
+          </div>
+        </div>
+      </dialog>
+      
+      <footer id="footer">
+        <p class="copyright">Designed by <span class="colored">Jettechnologies</span> &copy; 2023</p>
+      </footer>
+    </div>
+</body>
+</html>
